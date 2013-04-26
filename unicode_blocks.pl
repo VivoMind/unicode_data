@@ -8,7 +8,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: March 9, 2012
+%  Last modified: April 26, 2013
 %
 %  Original Unicode file header comments follow
 
@@ -53,10 +53,14 @@ unicode_block(CodePoint, Block) :-
 	;	% try first-argument indexing first
 		unicode_block(CodePoint, _, CodePointBlock) ->
 		Block = CodePointBlock
+	;	% if the block name is known, go straight to it
+		nonvar(Block) ->
+		unicode_block(CodePointStart, CodePointEnd, Block),
+		between(CodePointStart, CodePointEnd, CodePoint)
 	;	% look for a code point range that includes the given code point
-		unicode_block(CodePointStart, CodePointEnd, CodePointBlock),
+		unicode_block(CodePointStart, CodePointEnd, Block),
 		between(CodePointStart, CodePointEnd, CodePoint) ->
-		Block = CodePointBlock
+		true
 	;	% missing code point; see original comment above
 		between(0x0000, 0x10FFFF, CodePoint),
 		Block = 'No_Block'
