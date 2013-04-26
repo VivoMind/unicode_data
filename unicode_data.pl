@@ -33,7 +33,6 @@
 :- ensure_loaded('unicode_derived_normalization_props').
 :- ensure_loaded('unicode_derived_numeric_type').
 :- ensure_loaded('unicode_derived_numeric_values').
-:- ensure_loaded('unicode_game_symbols').
 :- ensure_loaded('unicode_hangul_syllable_type').
 :- ensure_loaded('unicode_indic_matra_category').
 :- ensure_loaded('unicode_indic_syllabic_category').
