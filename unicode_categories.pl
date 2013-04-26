@@ -46,23 +46,44 @@
 :- ensure_loaded('unicode_unihan_variants').
 
 unicode_category(CodePoint, Category) :-
-	unicode_category_convert_(Category, ConvertedCategory),
-	(	var(CodePoint) ->
+	(	nonvar(CodePoint) ->
+		% find the actual category of the code point
+		(	unicode_category_(CodePoint, ConvertedCategory) ->
+			true
+		;	unicode_unihan_variant(CodePoint, _, CodePointVariant),
+			unicode_category_(CodePointVariant, ConvertedCategory) ->
+			true
+		;	unicode_cjk_radical(_, Radical, CodePoint),
+			unicode_category_(Radical, ConvertedCategory) ->
+			true
+		;	fail
+		),
+		(	var(Category) ->
+			% we have two solutions, the generic category and the specific category
+			unicode_category_convert_(Category, ConvertedCategory)
+		;	% only one solution, assuming the given category is valid
+			unicode_category_convert_(Category, ConvertedCategory),
+			!
+		)
+	;	% generate code point-category pairs
 		(	unicode_category_(CodePoint, ConvertedCategory)
 		;	unicode_unihan_variant(CodePoint, _, CodePointVariant),
 			unicode_category_(CodePointVariant, ConvertedCategory)
 		;	unicode_cjk_radical(_, Radical, CodePoint),
 			unicode_category_(Radical, ConvertedCategory)
+		),
+		% check or unify the original category argument
+		(	var(Category) ->
+			% we have two solutions, the generic category and the specific category
+			unicode_category_convert_(Category, ConvertedCategory)
+		;	% only one solution, assuming the given category is valid but we
+			% must allow backtracking to the next code point-category pair
+			% without leraving spurious choice-points
+			(	unicode_category_convert_(Category, ConvertedCategory) ->
+				true
+			;	fail
+			)
 		)
-	;	unicode_category_(CodePoint, ConvertedCategory) ->
-		true
-	;	unicode_unihan_variant(CodePoint, _, CodePointVariant),
-		unicode_category_(CodePointVariant, ConvertedCategory) ->
-		true
-	;	unicode_cjk_radical(_, Radical, CodePoint),
-		unicode_category_(Radical, ConvertedCategory) ->
-		true
-	;	fail
 	).
 
 unicode_category_convert_('C', 'Cc').
