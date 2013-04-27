@@ -13,8 +13,6 @@
 :- include('unicode_categories/unicode_category_cc_other_control').
 :- include('unicode_categories/unicode_category_cf_other_format').
 :- include('unicode_categories/unicode_category_cn_other_not_assigned').
-:- include('unicode_categories/unicode_category_co_other_private_use').
-:- include('unicode_categories/unicode_category_cs_other_surrogate').
 :- include('unicode_categories/unicode_category_lc_letter_cased').
 :- include('unicode_categories/unicode_category_ll_letter_lowercase').
 :- include('unicode_categories/unicode_category_lm_letter_modifier').
@@ -41,6 +39,31 @@
 :- include('unicode_categories/unicode_category_zl_separator_line').
 :- include('unicode_categories/unicode_category_zp_separator_paragraph').
 :- include('unicode_categories/unicode_category_zs_separator_space').
+% the following two files need to be loaded after the previous ones to avoid
+% discontiguous predicate warnings as they define a different predicate
+:- include('unicode_categories/unicode_category_co_other_private_use').
+:- include('unicode_categories/unicode_category_cs_other_surrogate').
+
+% from the Unicode 6.2 "UnicodeData.txt" official file: 
+
+% 3400;<CJK Ideograph Extension A, First>;Lo;0;L;;;;;N;;;;;
+% 4DB5;<CJK Ideograph Extension A, Last>;Lo;0;L;;;;;N;;;;;
+unicode_category_range_(0x3400, 0x4DB5, 'Lo').
+% 4E00;<CJK Ideograph, First>;Lo;0;L;;;;;N;;;;;
+% 9FCC;<CJK Ideograph, Last>;Lo;0;L;;;;;N;;;;;
+unicode_category_range_(0x4E00, 0x9FCC, 'Lo').
+% AC00;<Hangul Syllable, First>;Lo;0;L;;;;;N;;;;;
+% D7A3;<Hangul Syllable, Last>;Lo;0;L;;;;;N;;;;;
+unicode_category_range_(0xAC00, 0xD7A3, 'Lo').
+% 20000;<CJK Ideograph Extension B, First>;Lo;0;L;;;;;N;;;;;
+% 2A6D6;<CJK Ideograph Extension B, Last>;Lo;0;L;;;;;N;;;;;
+unicode_category_range_(0x20000, 0x2A6D6, 'Lo').
+% 2A700;<CJK Ideograph Extension C, First>;Lo;0;L;;;;;N;;;;;
+% 2B734;<CJK Ideograph Extension C, Last>;Lo;0;L;;;;;N;;;;;
+unicode_category_range_(0x2A700, 0x2B734, 'Lo').
+% 2B740;<CJK Ideograph Extension D, First>;Lo;0;L;;;;;N;;;;;
+% 2B81D;<CJK Ideograph Extension D, Last>;Lo;0;L;;;;;N;;;;;
+unicode_category_range_(0x2B740, 0x2B81D, 'Lo').
 
 :- ensure_loaded('unicode_cjk_radicals').
 :- ensure_loaded('unicode_unihan_variants').
@@ -49,6 +72,8 @@ unicode_category(CodePoint, Category) :-
 	(	nonvar(CodePoint) ->
 		% find the actual category of the code point
 		(	unicode_category_(CodePoint, ConvertedCategory) ->
+			true
+		;	unicode_category_in_range_(CodePoint, ConvertedCategory) ->
 			true
 		;	unicode_unihan_variant(CodePoint, _, CodePointVariant),
 			unicode_category_(CodePointVariant, ConvertedCategory) ->
@@ -67,6 +92,7 @@ unicode_category(CodePoint, Category) :-
 		)
 	;	% generate code point-category pairs
 		(	unicode_category_(CodePoint, ConvertedCategory)
+		;	unicode_category_in_range_(CodePoint, ConvertedCategory)
 		;	unicode_unihan_variant(CodePoint, _, CodePointVariant),
 			unicode_category_(CodePointVariant, ConvertedCategory)
 		;	unicode_cjk_radical(_, Radical, CodePoint),
@@ -161,3 +187,19 @@ unicode_category_convert_('Z', 'Zs').
 unicode_category_convert_('Zl', 'Zl').
 unicode_category_convert_('Zp', 'Zp').
 unicode_category_convert_('Zs', 'Zs').
+
+
+unicode_category_in_range_(CodePoint, Category) :-
+	(	var(CodePoint) ->
+		% generate code point pairs
+		unicode_category_range_(CodePointStart, CodePointEnd, Category),
+		between(CodePointStart, CodePointEnd, CodePoint)
+	;	% try first-argument indexing first
+		unicode_category_range_(CodePoint, _, CodePointCategory) ->
+		Category = CodePointCategory
+	;	% look for a code point range that includes the given code point
+		unicode_category_range_(CodePointStart, CodePointEnd, CodePointCategory),
+		between(CodePointStart, CodePointEnd, CodePoint) ->
+		Category = CodePointCategory
+	;	fail
+	).

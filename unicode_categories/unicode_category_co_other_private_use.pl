@@ -10,9 +10,6 @@
 
 %  Last modified: March 29, 2012
 
-unicode_category_(0xE000, 'Co').
-unicode_category_(0xF8FF, 'Co').
-unicode_category_(0xF0000, 'Co').
-unicode_category_(0xFFFFD, 'Co').
-unicode_category_(0x100000, 'Co').
-unicode_category_(0x10FFFD, 'Co').
+unicode_category_range_(0xE000,   0xF8FF,   'Co').
+unicode_category_range_(0xF0000,  0xFFFFD,  'Co').
+unicode_category_range_(0x100000, 0x10FFFD, 'Co').

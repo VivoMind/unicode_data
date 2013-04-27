@@ -10,9 +10,6 @@
 
 %  Last modified: March 29, 2012
 
-unicode_category_(0xD800, 'Cs').
-unicode_category_(0xDB7F, 'Cs').
-unicode_category_(0xDB80, 'Cs').
-unicode_category_(0xDBFF, 'Cs').
-unicode_category_(0xDC00, 'Cs').
-unicode_category_(0xDFFF, 'Cs').
+unicode_category_range_(0xD800, 0xDB7F, 'Cs').
+unicode_category_range_(0xDB80, 0xDBFF, 'Cs').
+unicode_category_range_(0xDC00, 0xDFFF, 'Cs').

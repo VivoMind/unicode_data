@@ -3872,10 +3872,6 @@ unicode_category_(0x31FC, 'Lo').
 unicode_category_(0x31FD, 'Lo').
 unicode_category_(0x31FE, 'Lo').
 unicode_category_(0x31FF, 'Lo').
-unicode_category_(0x3400, 'Lo').
-unicode_category_(0x4DB5, 'Lo').
-unicode_category_(0x4E00, 'Lo').
-unicode_category_(0x9FCC, 'Lo').
 unicode_category_(0xA000, 'Lo').
 unicode_category_(0xA001, 'Lo').
 unicode_category_(0xA002, 'Lo').
@@ -5924,8 +5920,6 @@ unicode_category_(0xABDF, 'Lo').
 unicode_category_(0xABE0, 'Lo').
 unicode_category_(0xABE1, 'Lo').
 unicode_category_(0xABE2, 'Lo').
-unicode_category_(0xAC00, 'Lo').
-unicode_category_(0xD7A3, 'Lo').
 unicode_category_(0xD7B0, 'Lo').
 unicode_category_(0xD7B1, 'Lo').
 unicode_category_(0xD7B2, 'Lo').
@@ -11250,12 +11244,6 @@ unicode_category_(0x1EEB8, 'Lo').
 unicode_category_(0x1EEB9, 'Lo').
 unicode_category_(0x1EEBA, 'Lo').
 unicode_category_(0x1EEBB, 'Lo').
-unicode_category_(0x20000, 'Lo').
-unicode_category_(0x2A6D6, 'Lo').
-unicode_category_(0x2A700, 'Lo').
-unicode_category_(0x2B734, 'Lo').
-unicode_category_(0x2B740, 'Lo').
-unicode_category_(0x2B81D, 'Lo').
 unicode_category_(0x2F800, 'Lo').
 unicode_category_(0x2F801, 'Lo').
 unicode_category_(0x2F802, 'Lo').
