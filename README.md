@@ -125,8 +125,6 @@ found at:
 	`unicode_category/2`  
 * Dependencies:  
 	files in the `unicode_categories` directory  
-	`unicode_cjk_radicals.pl`  
-	`unicode_unihan_variants.pl`  	
 
 * File:  
 	`unicode_cjk_radicals.pl`  

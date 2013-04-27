@@ -8,8 +8,9 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: March 29, 2012
+%  Last modified: April 27, 2013
 
+% the following files need define a unicode_category_/2 auxiliary predicate
 :- include('unicode_categories/unicode_category_cc_other_control').
 :- include('unicode_categories/unicode_category_cf_other_format').
 :- include('unicode_categories/unicode_category_cn_other_not_assigned').
@@ -40,9 +41,11 @@
 :- include('unicode_categories/unicode_category_zp_separator_paragraph').
 :- include('unicode_categories/unicode_category_zs_separator_space').
 % the following two files need to be loaded after the previous ones to avoid
-% discontiguous predicate warnings as they define a different predicate
+% discontiguous predicate warnings as they define a unicode_category_range_/3
+% predicate
 :- include('unicode_categories/unicode_category_co_other_private_use').
 :- include('unicode_categories/unicode_category_cs_other_surrogate').
+
 
 % from the Unicode 6.2 "UnicodeData.txt" official file: 
 
@@ -65,8 +68,6 @@ unicode_category_range_(0x2A700, 0x2B734, 'Lo').
 % 2B81D;<CJK Ideograph Extension D, Last>;Lo;0;L;;;;;N;;;;;
 unicode_category_range_(0x2B740, 0x2B81D, 'Lo').
 
-:- ensure_loaded('unicode_cjk_radicals').
-:- ensure_loaded('unicode_unihan_variants').
 
 unicode_category(CodePoint, Category) :-
 	(	nonvar(CodePoint) ->
@@ -74,12 +75,6 @@ unicode_category(CodePoint, Category) :-
 		(	unicode_category_(CodePoint, ConvertedCategory) ->
 			true
 		;	unicode_category_in_range_(CodePoint, ConvertedCategory) ->
-			true
-		;	unicode_unihan_variant(CodePoint, _, CodePointVariant),
-			unicode_category_(CodePointVariant, ConvertedCategory) ->
-			true
-		;	unicode_cjk_radical(_, Radical, CodePoint),
-			unicode_category_(Radical, ConvertedCategory) ->
 			true
 		;	fail
 		),
@@ -93,10 +88,6 @@ unicode_category(CodePoint, Category) :-
 	;	% generate code point-category pairs
 		(	unicode_category_(CodePoint, ConvertedCategory)
 		;	unicode_category_in_range_(CodePoint, ConvertedCategory)
-		;	unicode_unihan_variant(CodePoint, _, CodePointVariant),
-			unicode_category_(CodePointVariant, ConvertedCategory)
-		;	unicode_cjk_radical(_, Radical, CodePoint),
-			unicode_category_(Radical, ConvertedCategory)
 		),
 		% check or unify the original category argument
 		(	var(Category) ->
@@ -111,6 +102,7 @@ unicode_category(CodePoint, Category) :-
 			)
 		)
 	).
+
 
 unicode_category_convert_('C', 'Cc').
 unicode_category_convert_('C', 'Cf').
