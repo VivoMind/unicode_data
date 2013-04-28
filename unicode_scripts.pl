@@ -8,7 +8,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: September 30, 2012
+%  Last modified: April 28, 2013
 %
 %  Original Unicode file header comments follow
 
@@ -43,10 +43,15 @@ unicode_script(CodePoint, Script) :-
 	;	% try first-argument indexing first
 		unicode_script(CodePoint, _, CodePointScript, _, _, _) ->
 		Script = CodePointScript
-	;	% look for a code point range that includes the given code point
-		unicode_script(CodePointStart, CodePointEnd, CodePointScript, _, _, _),
+	;	% if the block name is known, go straight to it
+		nonvar(Script) ->
+		unicode_script(CodePointStart, CodePointEnd, Script, _, _, _),
 		between(CodePointStart, CodePointEnd, CodePoint) ->
-		Script = CodePointScript
+		true
+	;	% look for a code point range that includes the given code point
+		unicode_script(CodePointStart, CodePointEnd, Script, _, _, _),
+		between(CodePointStart, CodePointEnd, CodePoint) ->
+		true
 	;	% missing code point; see original comment above
 		between(0x0000, 0x10FFFF, CodePoint),
 		Script = 'Zzzz'
