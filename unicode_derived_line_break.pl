@@ -52,8 +52,8 @@ unicode_line_break(CodePoint, Break) :-
 
 % Line_Break=Unknown
 
-unicode_line_break(0xE000, 0xF8FF, 'XX'). % Co [6400] <private-use-E000>..<private-use-F8FF>
-unicode_line_break(0xF0000, 0xFFFFD, 'XX'). % Co [65534] <private-use-F0000>..<private-use-FFFFD>
+unicode_line_break(0xE000,   0xF8FF,   'XX'). % Co [6400] <private-use-E000>..<private-use-F8FF>
+unicode_line_break(0xF0000,  0xFFFFD,  'XX'). % Co [65534] <private-use-F0000>..<private-use-FFFFD>
 unicode_line_break(0x100000, 0x10FFFD, 'XX'). % Co [65534] <private-use-100000>..<private-use-10FFFD>
 
 % The above property value applies to 780870 code points not listed here.
@@ -63,81 +63,81 @@ unicode_line_break(0x100000, 0x10FFFD, 'XX'). % Co [65534] <private-use-100000>.
 
 % Line_Break=Open_Punctuation
 
-unicode_line_break(0x0028, 0x0028  , 'OP'). % Ps       LEFT PARENTHESIS
-unicode_line_break(0x005B, 0x005B  , 'OP'). % Ps       LEFT SQUARE BRACKET
-unicode_line_break(0x007B, 0x007B  , 'OP'). % Ps       LEFT CURLY BRACKET
-unicode_line_break(0x00A1, 0x00A1  , 'OP'). % Po       INVERTED EXCLAMATION MARK
-unicode_line_break(0x00BF, 0x00BF  , 'OP'). % Po       INVERTED QUESTION MARK
-unicode_line_break(0x0F3A, 0x0F3A  , 'OP'). % Ps       TIBETAN MARK GUG RTAGS GYON
-unicode_line_break(0x0F3C, 0x0F3C  , 'OP'). % Ps       TIBETAN MARK ANG KHANG GYON
-unicode_line_break(0x169B, 0x169B  , 'OP'). % Ps       OGHAM FEATHER MARK
-unicode_line_break(0x201A, 0x201A  , 'OP'). % Ps       SINGLE LOW-9 QUOTATION MARK
-unicode_line_break(0x201E, 0x201E  , 'OP'). % Ps       DOUBLE LOW-9 QUOTATION MARK
-unicode_line_break(0x2045, 0x2045  , 'OP'). % Ps       LEFT SQUARE BRACKET WITH QUILL
-unicode_line_break(0x207D, 0x207D  , 'OP'). % Ps       SUPERSCRIPT LEFT PARENTHESIS
-unicode_line_break(0x208D, 0x208D  , 'OP'). % Ps       SUBSCRIPT LEFT PARENTHESIS
-unicode_line_break(0x2329, 0x2329  , 'OP'). % Ps       LEFT-POINTING ANGLE BRACKET
-unicode_line_break(0x2768, 0x2768  , 'OP'). % Ps       MEDIUM LEFT PARENTHESIS ORNAMENT
-unicode_line_break(0x276A, 0x276A  , 'OP'). % Ps       MEDIUM FLATTENED LEFT PARENTHESIS ORNAMENT
-unicode_line_break(0x276C, 0x276C  , 'OP'). % Ps       MEDIUM LEFT-POINTING ANGLE BRACKET ORNAMENT
-unicode_line_break(0x276E, 0x276E  , 'OP'). % Ps       HEAVY LEFT-POINTING ANGLE QUOTATION MARK ORNAMENT
-unicode_line_break(0x2770, 0x2770  , 'OP'). % Ps       HEAVY LEFT-POINTING ANGLE BRACKET ORNAMENT
-unicode_line_break(0x2772, 0x2772  , 'OP'). % Ps       LIGHT LEFT TORTOISE SHELL BRACKET ORNAMENT
-unicode_line_break(0x2774, 0x2774  , 'OP'). % Ps       MEDIUM LEFT CURLY BRACKET ORNAMENT
-unicode_line_break(0x27C5, 0x27C5  , 'OP'). % Ps       LEFT S-SHAPED BAG DELIMITER
-unicode_line_break(0x27E6, 0x27E6  , 'OP'). % Ps       MATHEMATICAL LEFT WHITE SQUARE BRACKET
-unicode_line_break(0x27E8, 0x27E8  , 'OP'). % Ps       MATHEMATICAL LEFT ANGLE BRACKET
-unicode_line_break(0x27EA, 0x27EA  , 'OP'). % Ps       MATHEMATICAL LEFT DOUBLE ANGLE BRACKET
-unicode_line_break(0x27EC, 0x27EC  , 'OP'). % Ps       MATHEMATICAL LEFT WHITE TORTOISE SHELL BRACKET
-unicode_line_break(0x27EE, 0x27EE  , 'OP'). % Ps       MATHEMATICAL LEFT FLATTENED PARENTHESIS
-unicode_line_break(0x2983, 0x2983  , 'OP'). % Ps       LEFT WHITE CURLY BRACKET
-unicode_line_break(0x2985, 0x2985  , 'OP'). % Ps       LEFT WHITE PARENTHESIS
-unicode_line_break(0x2987, 0x2987  , 'OP'). % Ps       Z NOTATION LEFT IMAGE BRACKET
-unicode_line_break(0x2989, 0x2989  , 'OP'). % Ps       Z NOTATION LEFT BINDING BRACKET
-unicode_line_break(0x298B, 0x298B  , 'OP'). % Ps       LEFT SQUARE BRACKET WITH UNDERBAR
-unicode_line_break(0x298D, 0x298D  , 'OP'). % Ps       LEFT SQUARE BRACKET WITH TICK IN TOP CORNER
-unicode_line_break(0x298F, 0x298F  , 'OP'). % Ps       LEFT SQUARE BRACKET WITH TICK IN BOTTOM CORNER
-unicode_line_break(0x2991, 0x2991  , 'OP'). % Ps       LEFT ANGLE BRACKET WITH DOT
-unicode_line_break(0x2993, 0x2993  , 'OP'). % Ps       LEFT ARC LESS-THAN BRACKET
-unicode_line_break(0x2995, 0x2995  , 'OP'). % Ps       DOUBLE LEFT ARC GREATER-THAN BRACKET
-unicode_line_break(0x2997, 0x2997  , 'OP'). % Ps       LEFT BLACK TORTOISE SHELL BRACKET
-unicode_line_break(0x29D8, 0x29D8  , 'OP'). % Ps       LEFT WIGGLY FENCE
-unicode_line_break(0x29DA, 0x29DA  , 'OP'). % Ps       LEFT DOUBLE WIGGLY FENCE
-unicode_line_break(0x29FC, 0x29FC  , 'OP'). % Ps       LEFT-POINTING CURVED ANGLE BRACKET
-unicode_line_break(0x2E18, 0x2E18  , 'OP'). % Po       INVERTED INTERROBANG
-unicode_line_break(0x2E22, 0x2E22  , 'OP'). % Ps       TOP LEFT HALF BRACKET
-unicode_line_break(0x2E24, 0x2E24  , 'OP'). % Ps       BOTTOM LEFT HALF BRACKET
-unicode_line_break(0x2E26, 0x2E26  , 'OP'). % Ps       LEFT SIDEWAYS U BRACKET
-unicode_line_break(0x2E28, 0x2E28  , 'OP'). % Ps       LEFT DOUBLE PARENTHESIS
-unicode_line_break(0x3008, 0x3008  , 'OP'). % Ps       LEFT ANGLE BRACKET
-unicode_line_break(0x300A, 0x300A  , 'OP'). % Ps       LEFT DOUBLE ANGLE BRACKET
-unicode_line_break(0x300C, 0x300C  , 'OP'). % Ps       LEFT CORNER BRACKET
-unicode_line_break(0x300E, 0x300E  , 'OP'). % Ps       LEFT WHITE CORNER BRACKET
-unicode_line_break(0x3010, 0x3010  , 'OP'). % Ps       LEFT BLACK LENTICULAR BRACKET
-unicode_line_break(0x3014, 0x3014  , 'OP'). % Ps       LEFT TORTOISE SHELL BRACKET
-unicode_line_break(0x3016, 0x3016  , 'OP'). % Ps       LEFT WHITE LENTICULAR BRACKET
-unicode_line_break(0x3018, 0x3018  , 'OP'). % Ps       LEFT WHITE TORTOISE SHELL BRACKET
-unicode_line_break(0x301A, 0x301A  , 'OP'). % Ps       LEFT WHITE SQUARE BRACKET
-unicode_line_break(0x301D, 0x301D  , 'OP'). % Ps       REVERSED DOUBLE PRIME QUOTATION MARK
-unicode_line_break(0xFD3E, 0xFD3E  , 'OP'). % Ps       ORNATE LEFT PARENTHESIS
-unicode_line_break(0xFE17, 0xFE17  , 'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT WHITE LENTICULAR BRACKET
-unicode_line_break(0xFE35, 0xFE35  , 'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT PARENTHESIS
-unicode_line_break(0xFE37, 0xFE37  , 'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT CURLY BRACKET
-unicode_line_break(0xFE39, 0xFE39  , 'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT TORTOISE SHELL BRACKET
-unicode_line_break(0xFE3B, 0xFE3B  , 'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT BLACK LENTICULAR BRACKET
-unicode_line_break(0xFE3D, 0xFE3D  , 'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT DOUBLE ANGLE BRACKET
-unicode_line_break(0xFE3F, 0xFE3F  , 'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT ANGLE BRACKET
-unicode_line_break(0xFE41, 0xFE41  , 'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT CORNER BRACKET
-unicode_line_break(0xFE43, 0xFE43  , 'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT WHITE CORNER BRACKET
-unicode_line_break(0xFE47, 0xFE47  , 'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT SQUARE BRACKET
-unicode_line_break(0xFE59, 0xFE59  , 'OP'). % Ps       SMALL LEFT PARENTHESIS
-unicode_line_break(0xFE5B, 0xFE5B  , 'OP'). % Ps       SMALL LEFT CURLY BRACKET
-unicode_line_break(0xFE5D, 0xFE5D  , 'OP'). % Ps       SMALL LEFT TORTOISE SHELL BRACKET
-unicode_line_break(0xFF08, 0xFF08  , 'OP'). % Ps       FULLWIDTH LEFT PARENTHESIS
-unicode_line_break(0xFF3B, 0xFF3B  , 'OP'). % Ps       FULLWIDTH LEFT SQUARE BRACKET
-unicode_line_break(0xFF5B, 0xFF5B  , 'OP'). % Ps       FULLWIDTH LEFT CURLY BRACKET
-unicode_line_break(0xFF5F, 0xFF5F  , 'OP'). % Ps       FULLWIDTH LEFT WHITE PARENTHESIS
-unicode_line_break(0xFF62, 0xFF62  , 'OP'). % Ps       HALFWIDTH LEFT CORNER BRACKET
+unicode_line_break(0x0028,  0x0028,  'OP'). % Ps       LEFT PARENTHESIS
+unicode_line_break(0x005B,  0x005B,  'OP'). % Ps       LEFT SQUARE BRACKET
+unicode_line_break(0x007B,  0x007B,  'OP'). % Ps       LEFT CURLY BRACKET
+unicode_line_break(0x00A1,  0x00A1,  'OP'). % Po       INVERTED EXCLAMATION MARK
+unicode_line_break(0x00BF,  0x00BF,  'OP'). % Po       INVERTED QUESTION MARK
+unicode_line_break(0x0F3A,  0x0F3A,  'OP'). % Ps       TIBETAN MARK GUG RTAGS GYON
+unicode_line_break(0x0F3C,  0x0F3C,  'OP'). % Ps       TIBETAN MARK ANG KHANG GYON
+unicode_line_break(0x169B,  0x169B,  'OP'). % Ps       OGHAM FEATHER MARK
+unicode_line_break(0x201A,  0x201A,  'OP'). % Ps       SINGLE LOW-9 QUOTATION MARK
+unicode_line_break(0x201E,  0x201E,  'OP'). % Ps       DOUBLE LOW-9 QUOTATION MARK
+unicode_line_break(0x2045,  0x2045,  'OP'). % Ps       LEFT SQUARE BRACKET WITH QUILL
+unicode_line_break(0x207D,  0x207D,  'OP'). % Ps       SUPERSCRIPT LEFT PARENTHESIS
+unicode_line_break(0x208D,  0x208D,  'OP'). % Ps       SUBSCRIPT LEFT PARENTHESIS
+unicode_line_break(0x2329,  0x2329,  'OP'). % Ps       LEFT-POINTING ANGLE BRACKET
+unicode_line_break(0x2768,  0x2768,  'OP'). % Ps       MEDIUM LEFT PARENTHESIS ORNAMENT
+unicode_line_break(0x276A,  0x276A,  'OP'). % Ps       MEDIUM FLATTENED LEFT PARENTHESIS ORNAMENT
+unicode_line_break(0x276C,  0x276C,  'OP'). % Ps       MEDIUM LEFT-POINTING ANGLE BRACKET ORNAMENT
+unicode_line_break(0x276E,  0x276E,  'OP'). % Ps       HEAVY LEFT-POINTING ANGLE QUOTATION MARK ORNAMENT
+unicode_line_break(0x2770,  0x2770,  'OP'). % Ps       HEAVY LEFT-POINTING ANGLE BRACKET ORNAMENT
+unicode_line_break(0x2772,  0x2772,  'OP'). % Ps       LIGHT LEFT TORTOISE SHELL BRACKET ORNAMENT
+unicode_line_break(0x2774,  0x2774,  'OP'). % Ps       MEDIUM LEFT CURLY BRACKET ORNAMENT
+unicode_line_break(0x27C5,  0x27C5,  'OP'). % Ps       LEFT S-SHAPED BAG DELIMITER
+unicode_line_break(0x27E6,  0x27E6,  'OP'). % Ps       MATHEMATICAL LEFT WHITE SQUARE BRACKET
+unicode_line_break(0x27E8,  0x27E8,  'OP'). % Ps       MATHEMATICAL LEFT ANGLE BRACKET
+unicode_line_break(0x27EA,  0x27EA,  'OP'). % Ps       MATHEMATICAL LEFT DOUBLE ANGLE BRACKET
+unicode_line_break(0x27EC,  0x27EC,  'OP'). % Ps       MATHEMATICAL LEFT WHITE TORTOISE SHELL BRACKET
+unicode_line_break(0x27EE,  0x27EE,  'OP'). % Ps       MATHEMATICAL LEFT FLATTENED PARENTHESIS
+unicode_line_break(0x2983,  0x2983,  'OP'). % Ps       LEFT WHITE CURLY BRACKET
+unicode_line_break(0x2985,  0x2985,  'OP'). % Ps       LEFT WHITE PARENTHESIS
+unicode_line_break(0x2987,  0x2987,  'OP'). % Ps       Z NOTATION LEFT IMAGE BRACKET
+unicode_line_break(0x2989,  0x2989,  'OP'). % Ps       Z NOTATION LEFT BINDING BRACKET
+unicode_line_break(0x298B,  0x298B,  'OP'). % Ps       LEFT SQUARE BRACKET WITH UNDERBAR
+unicode_line_break(0x298D,  0x298D,  'OP'). % Ps       LEFT SQUARE BRACKET WITH TICK IN TOP CORNER
+unicode_line_break(0x298F,  0x298F,  'OP'). % Ps       LEFT SQUARE BRACKET WITH TICK IN BOTTOM CORNER
+unicode_line_break(0x2991,  0x2991,  'OP'). % Ps       LEFT ANGLE BRACKET WITH DOT
+unicode_line_break(0x2993,  0x2993,  'OP'). % Ps       LEFT ARC LESS-THAN BRACKET
+unicode_line_break(0x2995,  0x2995,  'OP'). % Ps       DOUBLE LEFT ARC GREATER-THAN BRACKET
+unicode_line_break(0x2997,  0x2997,  'OP'). % Ps       LEFT BLACK TORTOISE SHELL BRACKET
+unicode_line_break(0x29D8,  0x29D8,  'OP'). % Ps       LEFT WIGGLY FENCE
+unicode_line_break(0x29DA,  0x29DA,  'OP'). % Ps       LEFT DOUBLE WIGGLY FENCE
+unicode_line_break(0x29FC,  0x29FC,  'OP'). % Ps       LEFT-POINTING CURVED ANGLE BRACKET
+unicode_line_break(0x2E18,  0x2E18,  'OP'). % Po       INVERTED INTERROBANG
+unicode_line_break(0x2E22,  0x2E22,  'OP'). % Ps       TOP LEFT HALF BRACKET
+unicode_line_break(0x2E24,  0x2E24,  'OP'). % Ps       BOTTOM LEFT HALF BRACKET
+unicode_line_break(0x2E26,  0x2E26,  'OP'). % Ps       LEFT SIDEWAYS U BRACKET
+unicode_line_break(0x2E28,  0x2E28,  'OP'). % Ps       LEFT DOUBLE PARENTHESIS
+unicode_line_break(0x3008,  0x3008,  'OP'). % Ps       LEFT ANGLE BRACKET
+unicode_line_break(0x300A,  0x300A,  'OP'). % Ps       LEFT DOUBLE ANGLE BRACKET
+unicode_line_break(0x300C,  0x300C,  'OP'). % Ps       LEFT CORNER BRACKET
+unicode_line_break(0x300E,  0x300E,  'OP'). % Ps       LEFT WHITE CORNER BRACKET
+unicode_line_break(0x3010,  0x3010,  'OP'). % Ps       LEFT BLACK LENTICULAR BRACKET
+unicode_line_break(0x3014,  0x3014,  'OP'). % Ps       LEFT TORTOISE SHELL BRACKET
+unicode_line_break(0x3016,  0x3016,  'OP'). % Ps       LEFT WHITE LENTICULAR BRACKET
+unicode_line_break(0x3018,  0x3018,  'OP'). % Ps       LEFT WHITE TORTOISE SHELL BRACKET
+unicode_line_break(0x301A,  0x301A,  'OP'). % Ps       LEFT WHITE SQUARE BRACKET
+unicode_line_break(0x301D,  0x301D,  'OP'). % Ps       REVERSED DOUBLE PRIME QUOTATION MARK
+unicode_line_break(0xFD3E,  0xFD3E,  'OP'). % Ps       ORNATE LEFT PARENTHESIS
+unicode_line_break(0xFE17,  0xFE17,  'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT WHITE LENTICULAR BRACKET
+unicode_line_break(0xFE35,  0xFE35,  'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT PARENTHESIS
+unicode_line_break(0xFE37,  0xFE37,  'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT CURLY BRACKET
+unicode_line_break(0xFE39,  0xFE39,  'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT TORTOISE SHELL BRACKET
+unicode_line_break(0xFE3B,  0xFE3B,  'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT BLACK LENTICULAR BRACKET
+unicode_line_break(0xFE3D,  0xFE3D,  'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT DOUBLE ANGLE BRACKET
+unicode_line_break(0xFE3F,  0xFE3F,  'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT ANGLE BRACKET
+unicode_line_break(0xFE41,  0xFE41,  'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT CORNER BRACKET
+unicode_line_break(0xFE43,  0xFE43,  'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT WHITE CORNER BRACKET
+unicode_line_break(0xFE47,  0xFE47,  'OP'). % Ps       PRESENTATION FORM FOR VERTICAL LEFT SQUARE BRACKET
+unicode_line_break(0xFE59,  0xFE59,  'OP'). % Ps       SMALL LEFT PARENTHESIS
+unicode_line_break(0xFE5B,  0xFE5B,  'OP'). % Ps       SMALL LEFT CURLY BRACKET
+unicode_line_break(0xFE5D,  0xFE5D,  'OP'). % Ps       SMALL LEFT TORTOISE SHELL BRACKET
+unicode_line_break(0xFF08,  0xFF08,  'OP'). % Ps       FULLWIDTH LEFT PARENTHESIS
+unicode_line_break(0xFF3B,  0xFF3B,  'OP'). % Ps       FULLWIDTH LEFT SQUARE BRACKET
+unicode_line_break(0xFF5B,  0xFF5B,  'OP'). % Ps       FULLWIDTH LEFT CURLY BRACKET
+unicode_line_break(0xFF5F,  0xFF5F,  'OP'). % Ps       FULLWIDTH LEFT WHITE PARENTHESIS
+unicode_line_break(0xFF62,  0xFF62,  'OP'). % Ps       HALFWIDTH LEFT CORNER BRACKET
 unicode_line_break(0x13258, 0x1325A, 'OP'). % Lo   [3] EGYPTIAN HIEROGLYPH O006A..EGYPTIAN HIEROGLYPH O006C
 unicode_line_break(0x13286, 0x13286, 'OP'). % Lo       EGYPTIAN HIEROGLYPH O036A
 unicode_line_break(0x13288, 0x13288, 'OP'). % Lo       EGYPTIAN HIEROGLYPH O036C
