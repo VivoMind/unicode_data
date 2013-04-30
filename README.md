@@ -88,7 +88,7 @@ across Prolog compilers.
 An overview of the original file names and the code point properties can be
 found at:
 
-  http://www.unicode.org/reports/tr44/#Directory_Structure
+  http://www.unicode.org/reports/tr44/#Directory_Structure  
   http://www.unicode.org/reports/tr44/#Property_Definitions
 
 * File:  
