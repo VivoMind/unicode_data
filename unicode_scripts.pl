@@ -8,7 +8,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: April 28, 2013
+%  Last modified: June 12, 2013
 %
 %  Original Unicode file header comments follow
 
@@ -35,26 +35,34 @@ http://www.unicode.org/Public/UNIDATA/Scripts.txt
 % ================================================
 */
 
-unicode_script(CodePoint, Script) :-
+unicode_script_category(CodePoint, Script, Category) :-
 	(	var(CodePoint) ->
 		% generate CodePoint-script pairs
-		unicode_script(CodePointStart, CodePointEnd, Script, _, _, _),
+		unicode_script(CodePointStart, CodePointEnd, Script, Category, _, _),
 		between(CodePointStart, CodePointEnd, CodePoint)
 	;	% try first-argument indexing first
-		unicode_script(CodePoint, _, CodePointScript, _, _, _) ->
-		Script = CodePointScript
-	;	% if the block name is known, go straight to it
+		unicode_script(CodePoint, _, CodePointScript, CodePointCategory, _, _) ->
+		Script = CodePointScript,
+		Category = CodePointCategory
+	;	% if the script name is known, go straight to it
 		nonvar(Script) ->
-		unicode_script(CodePointStart, CodePointEnd, Script, _, _, _),
+		unicode_script(CodePointStart, CodePointEnd, Script, CodePointCategory, _, _),
 		between(CodePointStart, CodePointEnd, CodePoint) ->
-		true
+		Category = CodePointCategory
+	;	% if the category name is known, go straight to it
+		nonvar(Category) ->
+		unicode_script(CodePointStart, CodePointEnd, CodePointScript, Category, _, _),
+		between(CodePointStart, CodePointEnd, CodePoint) ->
+		Script = CodePointScript
 	;	% look for a code point range that includes the given code point
-		unicode_script(CodePointStart, CodePointEnd, Script, _, _, _),
+		unicode_script(CodePointStart, CodePointEnd, CodePointScript, CodePointCategory, _, _),
 		between(CodePointStart, CodePointEnd, CodePoint) ->
-		true
+		Script = CodePointScript,
+		Category = CodePointCategory
 	;	% missing code point; see original comment above
 		between(0x0000, 0x10FFFF, CodePoint),
-		Script = 'Zzzz'
+		Script = 'Zzzz',
+		Category = ''
 	).
 
 unicode_script(0x0000, 0x001F, 'Common', 'Cc', 32, '<control-0000>..<control-001F>').

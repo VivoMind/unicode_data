@@ -95,7 +95,7 @@ unicode_category(CodePoint, Category) :-
 			unicode_category_convert_(Category, ConvertedCategory)
 		;	% only one solution, assuming the given category is valid but we
 			% must allow backtracking to the next code point-category pair
-			% without leraving spurious choice-points
+			% without leaving spurious choice-points
 			(	unicode_category_convert_(Category, ConvertedCategory) ->
 				true
 			;	fail

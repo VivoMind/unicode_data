@@ -366,6 +366,14 @@ found at:
 	files in the `unicode_prop_list` directory
 
 * File:  
+	`unicode_range_scripts.pl`  
+* Provides:  
+	`unicode_range_script/3`  
+	`unicode_script/2`  
+* Dependencies:  
+	(none)
+
+* File:  
 	`unicode_script_extensions.pl`  
 * Provides:  
 	`unicode_script_extension/2-3`  
@@ -375,7 +383,8 @@ found at:
 * File:  
 	`unicode_scripts.pl`  
 * Provides:  
-	`unicode_script/2-6`  
+	`unicode_script/6`  
+	`unicode_script_category/3`  
 * Dependencies:  
 	(none)
 
