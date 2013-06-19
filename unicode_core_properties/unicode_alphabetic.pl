@@ -8,7 +8,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: September 30, 2012
+%  Last modified: June 20, 2013
 %
 %  Original Unicode file header comments follow
 
@@ -24,19 +24,22 @@
 % ================================================
 */
 
-unicode_alphabetic(CodePoint) :-
-	(	var(CodePoint) ->
-		% generate code point pairs
-		unicode_alphabetic(CodePointStart, CodePointEnd),
-		between(CodePointStart, CodePointEnd, CodePoint)
-	;	% try first-argument indexing first
-		unicode_alphabetic(CodePoint, _) ->
-		true
-	;	% look for a code point range that includes the given code point
-		unicode_alphabetic(CodePointStart, CodePointEnd),
-		between(CodePointStart, CodePointEnd, CodePoint) ->
-		true
-	).
+% use the unicode_alphabetic/1 predicate defined in the derived
+% file "unicode_range_alphabetic.pl" for better performance
+%
+%unicode_alphabetic(CodePoint) :-
+%	(	var(CodePoint) ->
+%		% generate code point pairs
+%		unicode_alphabetic(CodePointStart, CodePointEnd),
+%		between(CodePointStart, CodePointEnd, CodePoint)
+%	;	% try first-argument indexing first
+%		unicode_alphabetic(CodePoint, _) ->
+%		true
+%	;	% look for a code point range that includes the given code point
+%		unicode_alphabetic(CodePointStart, CodePointEnd),
+%		between(CodePointStart, CodePointEnd, CodePoint) ->
+%		true
+%	).
 
 % ================================================
 
