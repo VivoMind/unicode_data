@@ -8,7 +8,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: September 30, 2012
+%  Last modified: June 20, 2013
 %
 %  Original Unicode file header comments follow
 
@@ -43,5 +43,7 @@
 :- ensure_loaded('unicode_core_properties/unicode_grapheme_extend').
 :- ensure_loaded('unicode_core_properties/unicode_grapheme_base').
 :- ensure_loaded('unicode_core_properties/unicode_grapheme_link').
+
+:- ensure_loaded('unicode_core_properties/unicode_range_alphabetic').
 
 % EOF
