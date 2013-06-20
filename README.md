@@ -144,7 +144,8 @@ found at:
 	`unicode_core_properties.pl`  
 * Provides:  
 	`unicode_math/1-2`  
-	`unicode_alphabetic/2`  
+	`unicode_alphabetic/1-2`  
+	`unicode_range_alphabetic/2`  
 	`unicode_lowercase/1-2`  
 	`unicode_uppercase/1-2`  
 	`unicode_cased/1-2`  
@@ -364,14 +365,6 @@ found at:
 	`unicode_pattern_syntax/1-2`  
 * Dependencies:  
 	files in the `unicode_prop_list` directory
-
-* File:  
-	`unicode_range_alphabetic.pl`  
-* Provides:  
-	`unicode_range_alphabetic/2`  
-	`unicode_alphabetic/1`  
-* Dependencies:  
-	(none)
 
 * File:  
 	`unicode_range_scripts.pl`  
