@@ -8,7 +8,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: June 12, 2013
+%  Last modified: August 23, 2013
 %
 %  File derived from the "unicode_scripts.pl" file by merging the consecutive
 %  intervals for better performance of the unicode_script/2 predicate
@@ -21,11 +21,13 @@ unicode_script(CodePoint, Script) :-
 	;	% try first-argument indexing first
 		unicode_range_script(CodePoint, _, CodePointScript) ->
 		Script = CodePointScript
-	;	% if the block name is known, go straight to it
+	;	% if the script name is known, go straight to it
 		nonvar(Script) ->
-		unicode_range_script(CodePointStart, CodePointEnd, Script),
-		between(CodePointStart, CodePointEnd, CodePoint) ->
-		true
+		(	unicode_range_script(CodePointStart, CodePointEnd, Script),
+			between(CodePointStart, CodePointEnd, CodePoint) ->
+			true
+		;	fail
+		)
 	;	% look for a code point range that includes the given code point
 		unicode_range_script(CodePointStart, CodePointEnd, Script),
 		between(CodePointStart, CodePointEnd, CodePoint) ->
