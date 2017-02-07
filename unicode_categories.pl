@@ -8,7 +8,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: April 27, 2013
+%  Last modified: February 7, 2017
 
 % the following files need define a unicode_category_/2 auxiliary predicate
 :- include('unicode_categories/unicode_category_cc_other_control').
@@ -37,9 +37,9 @@
 :- include('unicode_categories/unicode_category_sk_symbol_modifier').
 :- include('unicode_categories/unicode_category_sm_symbol_math').
 :- include('unicode_categories/unicode_category_so_symbol_other').
+:- include('unicode_categories/unicode_category_zs_separator_space').
 :- include('unicode_categories/unicode_category_zl_separator_line').
 :- include('unicode_categories/unicode_category_zp_separator_paragraph').
-:- include('unicode_categories/unicode_category_zs_separator_space').
 % the following two files need to be loaded after the previous ones to avoid
 % discontiguous predicate warnings as they define a unicode_category_range_/3
 % predicate
@@ -72,113 +72,94 @@ unicode_category_range_(0x2B740, 0x2B81D, 'Lo').
 unicode_category(CodePoint, Category) :-
 	(	nonvar(CodePoint) ->
 		% find the actual category of the code point
-		(	unicode_category_(CodePoint, ConvertedCategory) ->
+		(	unicode_category_(CodePoint, SpecificCategory) ->
 			true
-		;	unicode_category_in_range_(CodePoint, ConvertedCategory) ->
+		;	unicode_category_in_range_(CodePoint, SpecificCategory) ->
 			true
 		;	fail
-		),
-		(	var(Category) ->
-			% we have two solutions, the generic category and the specific category
-			unicode_category_convert_(Category, ConvertedCategory)
-		;	% only one solution, assuming the given category is valid
-			unicode_category_convert_(Category, ConvertedCategory),
-			!
 		)
 	;	% generate code point-category pairs
-		(	unicode_category_(CodePoint, ConvertedCategory)
-		;	unicode_category_in_range_(CodePoint, ConvertedCategory)
-		),
-		% check or unify the original category argument
-		(	var(Category) ->
-			% we have two solutions, the generic category and the specific category
-			unicode_category_convert_(Category, ConvertedCategory)
-		;	% only one solution, assuming the given category is valid but we
-			% must allow backtracking to the next code point-category pair
-			% without leaving spurious choice-points
-			(	unicode_category_convert_(Category, ConvertedCategory) ->
-				true
-			;	fail
-			)
+		between(0x000000, 0x10FFFF, CodePoint),
+		(	unicode_category_(CodePoint, SpecificCategory)
+		;	unicode_category_in_range_(CodePoint, SpecificCategory)
 		)
+	),
+	% check or unify the original category argument
+	(	Category == SpecificCategory ->
+		true
+	;	% we have two solutions, the generic category and the specific category
+		unicode_category_convert_(SpecificCategory, Category)
 	).
 
 
-unicode_category_convert_('C', 'Cc').
-unicode_category_convert_('C', 'Cf').
-unicode_category_convert_('C', 'Cn').
-unicode_category_convert_('C', 'Co').
-unicode_category_convert_('C', 'Cs').
-
 unicode_category_convert_('Cc', 'Cc').
+unicode_category_convert_('Cc', 'C').
 unicode_category_convert_('Cf', 'Cf').
+unicode_category_convert_('Cf', 'C').
 unicode_category_convert_('Cn', 'Cn').
+unicode_category_convert_('Cn', 'C').
 unicode_category_convert_('Co', 'Co').
+unicode_category_convert_('Co', 'C').
 unicode_category_convert_('Cs', 'Cs').
-
-unicode_category_convert_('L', 'Lc').
-unicode_category_convert_('L', 'Ll').
-unicode_category_convert_('L', 'Lm').
-unicode_category_convert_('L', 'Lo').
-unicode_category_convert_('L', 'Lt').
-unicode_category_convert_('L', 'Lu').
+unicode_category_convert_('Cs', 'C').
 
 unicode_category_convert_('Lc', 'Lc').
+unicode_category_convert_('Lc', 'L').
 unicode_category_convert_('Ll', 'Ll').
+unicode_category_convert_('Ll', 'L').
 unicode_category_convert_('Lm', 'Lm').
+unicode_category_convert_('Lm', 'L').
 unicode_category_convert_('Lo', 'Lo').
+unicode_category_convert_('Lo', 'L').
 unicode_category_convert_('Lt', 'Lt').
+unicode_category_convert_('Lt', 'L').
 unicode_category_convert_('Lu', 'Lu').
-
-unicode_category_convert_('M', 'Mc').
-unicode_category_convert_('M', 'Me').
-unicode_category_convert_('M', 'Mn').
+unicode_category_convert_('Lu', 'L').
 
 unicode_category_convert_('Mc', 'Mc').
+unicode_category_convert_('Mc', 'M').
 unicode_category_convert_('Me', 'Me').
+unicode_category_convert_('Me', 'M').
 unicode_category_convert_('Mn', 'Mn').
-
-unicode_category_convert_('N', 'Nd').
-unicode_category_convert_('N', 'Nl').
-unicode_category_convert_('N', 'No').
+unicode_category_convert_('Mn', 'M').
 
 unicode_category_convert_('Nd', 'Nd').
+unicode_category_convert_('Nd', 'N').
 unicode_category_convert_('Nl', 'Nl').
+unicode_category_convert_('Nl', 'N').
 unicode_category_convert_('No', 'No').
-
-unicode_category_convert_('P', 'Pc').
-unicode_category_convert_('P', 'Pd').
-unicode_category_convert_('P', 'Pe').
-unicode_category_convert_('P', 'Pf').
-unicode_category_convert_('P', 'Pi').
-unicode_category_convert_('P', 'Po').
-unicode_category_convert_('P', 'Ps').
+unicode_category_convert_('No', 'N').
                                 
 unicode_category_convert_('Pc', 'Pc').
+unicode_category_convert_('Pc', 'P').
 unicode_category_convert_('Pd', 'Pd').
+unicode_category_convert_('Pd', 'P').
 unicode_category_convert_('Pe', 'Pe').
+unicode_category_convert_('Pe', 'P').
 unicode_category_convert_('Pf', 'Pf').
+unicode_category_convert_('Pf', 'P').
 unicode_category_convert_('Pi', 'Pi').
+unicode_category_convert_('Pi', 'P').
 unicode_category_convert_('Po', 'Po').
+unicode_category_convert_('Po', 'P').
 unicode_category_convert_('Ps', 'Ps').
-
-unicode_category_convert_('S', 'Sc').
-unicode_category_convert_('S', 'Sk').
-unicode_category_convert_('S', 'Sm').
-unicode_category_convert_('S', 'So').
+unicode_category_convert_('Ps', 'P').
 
 unicode_category_convert_('Sc', 'Sc').
+unicode_category_convert_('Sc', 'S').
 unicode_category_convert_('Sk', 'Sk').
+unicode_category_convert_('Sk', 'S').
 unicode_category_convert_('Sm', 'Sm').
+unicode_category_convert_('Sm', 'S').
 unicode_category_convert_('So', 'So').
-
-unicode_category_convert_('Z', 'Zl').
-unicode_category_convert_('Z', 'Zp').
-unicode_category_convert_('Z', 'Zs').
+unicode_category_convert_('So', 'S').
                                 
-unicode_category_convert_('Zl', 'Zl').
-unicode_category_convert_('Zp', 'Zp').
 unicode_category_convert_('Zs', 'Zs').
+unicode_category_convert_('Zs', 'Z').
+unicode_category_convert_('Zp', 'Zp').
+unicode_category_convert_('Zp', 'Z').
+unicode_category_convert_('Zl', 'Zl').
+unicode_category_convert_('Zl', 'Z').
 
 
 unicode_category_in_range_(CodePoint, Category) :-
