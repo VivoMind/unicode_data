@@ -8,40 +8,40 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: September 30, 2012
+%  Last modified: February 11, 2017
 %
 %  This file simply loads all the files in these resources
 
-:- ensure_loaded('unicode_arabic_shaping').
-:- ensure_loaded('unicode_bidi_mirroring').
-:- ensure_loaded('unicode_blocks').
-:- ensure_loaded('unicode_case_folding').
-:- ensure_loaded('unicode_categories').
-:- ensure_loaded('unicode_cjk_radicals').
-:- ensure_loaded('unicode_composition_exclusions').
-:- ensure_loaded('unicode_core_properties').
-:- ensure_loaded('unicode_decomposition_type').
-:- ensure_loaded('unicode_derived_age').
-:- ensure_loaded('unicode_derived_bidi_class').
-:- ensure_loaded('unicode_derived_combining_class').
-:- ensure_loaded('unicode_derived_core_properties').
-:- ensure_loaded('unicode_derived_decomposition_type').
-:- ensure_loaded('unicode_derived_east_asian_width').
-:- ensure_loaded('unicode_derived_joining_group').
-:- ensure_loaded('unicode_derived_joining_type').
-:- ensure_loaded('unicode_derived_line_break').
-:- ensure_loaded('unicode_derived_normalization_props').
-:- ensure_loaded('unicode_derived_numeric_type').
-:- ensure_loaded('unicode_derived_numeric_values').
-:- ensure_loaded('unicode_hangul_syllable_type').
-:- ensure_loaded('unicode_indic_matra_category').
-:- ensure_loaded('unicode_indic_syllabic_category').
-:- ensure_loaded('unicode_jamo').
-:- ensure_loaded('unicode_name_aliases').
-:- ensure_loaded('unicode_names').
-:- ensure_loaded('unicode_prop_list').
-:- ensure_loaded('unicode_script_extensions').
-:- ensure_loaded('unicode_scripts').
-:- ensure_loaded('unicode_special_casing').
-:- ensure_loaded('unicode_unihan_variants').
-:- ensure_loaded('unicode_version').
+:- include('unicode_arabic_shaping').
+:- include('unicode_bidi_mirroring').
+:- include('unicode_blocks').
+:- include('unicode_case_folding').
+:- include('unicode_categories').
+:- include('unicode_cjk_radicals').
+:- include('unicode_composition_exclusions').
+:- include('unicode_core_properties').
+:- include('unicode_decomposition_type').
+:- include('unicode_derived_age').
+:- include('unicode_derived_bidi_class').
+:- include('unicode_derived_combining_class').
+:- include('unicode_derived_core_properties').
+:- include('unicode_derived_decomposition_type').
+:- include('unicode_derived_east_asian_width').
+:- include('unicode_derived_joining_group').
+:- include('unicode_derived_joining_type').
+:- include('unicode_derived_line_break').
+:- include('unicode_derived_normalization_props').
+:- include('unicode_derived_numeric_type').
+:- include('unicode_derived_numeric_values').
+:- include('unicode_hangul_syllable_type').
+:- include('unicode_indic_matra_category').
+:- include('unicode_indic_syllabic_category').
+:- include('unicode_jamo').
+:- include('unicode_name_aliases').
+:- include('unicode_names').
+:- include('unicode_prop_list').
+:- include('unicode_script_extensions').
+:- include('unicode_scripts').
+:- include('unicode_special_casing').
+:- include('unicode_unihan_variants').
+:- include('unicode_version').

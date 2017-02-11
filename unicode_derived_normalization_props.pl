@@ -8,7 +8,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: March 27, 2012
+%  Last modified: February 11, 2017
 %
 %  Original Unicode file header comments follow
 
@@ -22,19 +22,19 @@
 # For documentation, see http://www.unicode.org/reports/tr44/
 */
 
-:- ensure_loaded('unicode_derived_normalization_props/unicode_fc_nfkc').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_full_composition_exclusion').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_nfd_qc_no').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_nfc_qc_no').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_nfc_qc_maybe').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_nfkd_qc_no').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_nfkc_qc_no').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_nfkc_qc_maybe').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_expands_on_nfd').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_expands_on_nfc').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_expands_on_nfkd').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_expands_on_nfkc').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_nfkc_cf').
-:- ensure_loaded('unicode_derived_normalization_props/unicode_changes_when_nfkc_casefolded').
+:- include('unicode_derived_normalization_props/unicode_fc_nfkc').
+:- include('unicode_derived_normalization_props/unicode_full_composition_exclusion').
+:- include('unicode_derived_normalization_props/unicode_nfd_qc_no').
+:- include('unicode_derived_normalization_props/unicode_nfc_qc_no').
+:- include('unicode_derived_normalization_props/unicode_nfc_qc_maybe').
+:- include('unicode_derived_normalization_props/unicode_nfkd_qc_no').
+:- include('unicode_derived_normalization_props/unicode_nfkc_qc_no').
+:- include('unicode_derived_normalization_props/unicode_nfkc_qc_maybe').
+:- include('unicode_derived_normalization_props/unicode_expands_on_nfd').
+:- include('unicode_derived_normalization_props/unicode_expands_on_nfc').
+:- include('unicode_derived_normalization_props/unicode_expands_on_nfkd').
+:- include('unicode_derived_normalization_props/unicode_expands_on_nfkc').
+:- include('unicode_derived_normalization_props/unicode_nfkc_cf').
+:- include('unicode_derived_normalization_props/unicode_changes_when_nfkc_casefolded').
 
 % EOF

@@ -8,7 +8,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: June 20, 2013
+%  Last modified: February 11, 2017
 %
 %  Original Unicode file header comments follow
 
@@ -24,26 +24,26 @@
 % ================================================
 */
 
-:- ensure_loaded('unicode_core_properties/unicode_math').
-:- ensure_loaded('unicode_core_properties/unicode_alphabetic').
-:- ensure_loaded('unicode_core_properties/unicode_lowercase').
-:- ensure_loaded('unicode_core_properties/unicode_uppercase').
-:- ensure_loaded('unicode_core_properties/unicode_cased').
-:- ensure_loaded('unicode_core_properties/unicode_case_ignorable').
-:- ensure_loaded('unicode_core_properties/unicode_changes_when_lowercased').
-:- ensure_loaded('unicode_core_properties/unicode_changes_when_uppercased').
-:- ensure_loaded('unicode_core_properties/unicode_changes_when_titlecased').
-:- ensure_loaded('unicode_core_properties/unicode_changes_when_casefolded').
-:- ensure_loaded('unicode_core_properties/unicode_changes_when_casemapped').
-:- ensure_loaded('unicode_core_properties/unicode_id_start').
-:- ensure_loaded('unicode_core_properties/unicode_id_continue').
-:- ensure_loaded('unicode_core_properties/unicode_xid_start').
-:- ensure_loaded('unicode_core_properties/unicode_xid_continue').
-:- ensure_loaded('unicode_core_properties/unicode_default_ignorable').
-:- ensure_loaded('unicode_core_properties/unicode_grapheme_extend').
-:- ensure_loaded('unicode_core_properties/unicode_grapheme_base').
-:- ensure_loaded('unicode_core_properties/unicode_grapheme_link').
+:- include('unicode_core_properties/unicode_math').
+:- include('unicode_core_properties/unicode_alphabetic').
+:- include('unicode_core_properties/unicode_lowercase').
+:- include('unicode_core_properties/unicode_uppercase').
+:- include('unicode_core_properties/unicode_cased').
+:- include('unicode_core_properties/unicode_case_ignorable').
+:- include('unicode_core_properties/unicode_changes_when_lowercased').
+:- include('unicode_core_properties/unicode_changes_when_uppercased').
+:- include('unicode_core_properties/unicode_changes_when_titlecased').
+:- include('unicode_core_properties/unicode_changes_when_casefolded').
+:- include('unicode_core_properties/unicode_changes_when_casemapped').
+:- include('unicode_core_properties/unicode_id_start').
+:- include('unicode_core_properties/unicode_id_continue').
+:- include('unicode_core_properties/unicode_xid_start').
+:- include('unicode_core_properties/unicode_xid_continue').
+:- include('unicode_core_properties/unicode_default_ignorable').
+:- include('unicode_core_properties/unicode_grapheme_extend').
+:- include('unicode_core_properties/unicode_grapheme_base').
+:- include('unicode_core_properties/unicode_grapheme_link').
 
-:- ensure_loaded('unicode_core_properties/unicode_range_alphabetic').
+:- include('unicode_core_properties/unicode_range_alphabetic').
 
 % EOF

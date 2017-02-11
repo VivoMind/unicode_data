@@ -8,7 +8,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: March 15, 2012
+%  Last modified: February 11, 2017
 %
 %  Original Unicode file header comments follow
 
@@ -31,22 +31,22 @@
 # @missing: 0000..10FFFF; None
 */
 
-:- ensure_loaded('unicode_decomposition_type/unicode_canonical').
-:- ensure_loaded('unicode_decomposition_type/unicode_compat').
-:- ensure_loaded('unicode_decomposition_type/unicode_font').
-:- ensure_loaded('unicode_decomposition_type/unicode_nobreak').
-:- ensure_loaded('unicode_decomposition_type/unicode_initial').
-:- ensure_loaded('unicode_decomposition_type/unicode_medial').
-:- ensure_loaded('unicode_decomposition_type/unicode_final').
-:- ensure_loaded('unicode_decomposition_type/unicode_isolated').
-:- ensure_loaded('unicode_decomposition_type/unicode_circle').
-:- ensure_loaded('unicode_decomposition_type/unicode_super').
-:- ensure_loaded('unicode_decomposition_type/unicode_sub').
-:- ensure_loaded('unicode_decomposition_type/unicode_vertical').
-:- ensure_loaded('unicode_decomposition_type/unicode_wide').
-:- ensure_loaded('unicode_decomposition_type/unicode_narrow').
-:- ensure_loaded('unicode_decomposition_type/unicode_small').
-:- ensure_loaded('unicode_decomposition_type/unicode_square').
-:- ensure_loaded('unicode_decomposition_type/unicode_fraction').
+:- include('unicode_decomposition_type/unicode_canonical').
+:- include('unicode_decomposition_type/unicode_compat').
+:- include('unicode_decomposition_type/unicode_font').
+:- include('unicode_decomposition_type/unicode_nobreak').
+:- include('unicode_decomposition_type/unicode_initial').
+:- include('unicode_decomposition_type/unicode_medial').
+:- include('unicode_decomposition_type/unicode_final').
+:- include('unicode_decomposition_type/unicode_isolated').
+:- include('unicode_decomposition_type/unicode_circle').
+:- include('unicode_decomposition_type/unicode_super').
+:- include('unicode_decomposition_type/unicode_sub').
+:- include('unicode_decomposition_type/unicode_vertical').
+:- include('unicode_decomposition_type/unicode_wide').
+:- include('unicode_decomposition_type/unicode_narrow').
+:- include('unicode_decomposition_type/unicode_small').
+:- include('unicode_decomposition_type/unicode_square').
+:- include('unicode_decomposition_type/unicode_fraction').
 
 % EOF

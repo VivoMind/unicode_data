@@ -8,7 +8,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  Last modified: March 15, 2012
+%  Last modified: February 11, 2017
 %
 %  Original Unicode file header comments follow
 
@@ -22,37 +22,37 @@
 # For documentation, see http://www.unicode.org/reports/tr44/
 */
 
-:- ensure_loaded('unicode_prop_list/unicode_white_space').
-:- ensure_loaded('unicode_prop_list/unicode_bidi_control').
-:- ensure_loaded('unicode_prop_list/unicode_join_control').
-:- ensure_loaded('unicode_prop_list/unicode_dash').
-:- ensure_loaded('unicode_prop_list/unicode_hyphen').
-:- ensure_loaded('unicode_prop_list/unicode_quotation_mark').
-:- ensure_loaded('unicode_prop_list/unicode_terminal_punctuation').
-:- ensure_loaded('unicode_prop_list/unicode_other_math').
-:- ensure_loaded('unicode_prop_list/unicode_hex_digit').
-:- ensure_loaded('unicode_prop_list/unicode_ascii_hex_digit').
-:- ensure_loaded('unicode_prop_list/unicode_other_alphabetic').
-:- ensure_loaded('unicode_prop_list/unicode_ideographic').
-:- ensure_loaded('unicode_prop_list/unicode_diacritic').
-:- ensure_loaded('unicode_prop_list/unicode_extender').
-:- ensure_loaded('unicode_prop_list/unicode_other_lowercase').
-:- ensure_loaded('unicode_prop_list/unicode_other_uppercase').
-:- ensure_loaded('unicode_prop_list/unicode_noncharacter_code_point').
-:- ensure_loaded('unicode_prop_list/unicode_other_grapheme_extend').
-:- ensure_loaded('unicode_prop_list/unicode_ids_binary_operator').
-:- ensure_loaded('unicode_prop_list/unicode_ids_trinary_operator').
-:- ensure_loaded('unicode_prop_list/unicode_radical').
-:- ensure_loaded('unicode_prop_list/unicode_unified_ideograph').
-:- ensure_loaded('unicode_prop_list/unicode_other_default_ignorable').
-:- ensure_loaded('unicode_prop_list/unicode_deprecated').
-:- ensure_loaded('unicode_prop_list/unicode_soft_dotted').
-:- ensure_loaded('unicode_prop_list/unicode_logical_order_exception').
-:- ensure_loaded('unicode_prop_list/unicode_other_id_start').
-:- ensure_loaded('unicode_prop_list/unicode_other_id_continue').
-:- ensure_loaded('unicode_prop_list/unicode_sterm').
-:- ensure_loaded('unicode_prop_list/unicode_variation_selector').
-:- ensure_loaded('unicode_prop_list/unicode_pattern_white_space').
-:- ensure_loaded('unicode_prop_list/unicode_pattern_syntax').
+:- include('unicode_prop_list/unicode_white_space').
+:- include('unicode_prop_list/unicode_bidi_control').
+:- include('unicode_prop_list/unicode_join_control').
+:- include('unicode_prop_list/unicode_dash').
+:- include('unicode_prop_list/unicode_hyphen').
+:- include('unicode_prop_list/unicode_quotation_mark').
+:- include('unicode_prop_list/unicode_terminal_punctuation').
+:- include('unicode_prop_list/unicode_other_math').
+:- include('unicode_prop_list/unicode_hex_digit').
+:- include('unicode_prop_list/unicode_ascii_hex_digit').
+:- include('unicode_prop_list/unicode_other_alphabetic').
+:- include('unicode_prop_list/unicode_ideographic').
+:- include('unicode_prop_list/unicode_diacritic').
+:- include('unicode_prop_list/unicode_extender').
+:- include('unicode_prop_list/unicode_other_lowercase').
+:- include('unicode_prop_list/unicode_other_uppercase').
+:- include('unicode_prop_list/unicode_noncharacter_code_point').
+:- include('unicode_prop_list/unicode_other_grapheme_extend').
+:- include('unicode_prop_list/unicode_ids_binary_operator').
+:- include('unicode_prop_list/unicode_ids_trinary_operator').
+:- include('unicode_prop_list/unicode_radical').
+:- include('unicode_prop_list/unicode_unified_ideograph').
+:- include('unicode_prop_list/unicode_other_default_ignorable').
+:- include('unicode_prop_list/unicode_deprecated').
+:- include('unicode_prop_list/unicode_soft_dotted').
+:- include('unicode_prop_list/unicode_logical_order_exception').
+:- include('unicode_prop_list/unicode_other_id_start').
+:- include('unicode_prop_list/unicode_other_id_continue').
+:- include('unicode_prop_list/unicode_sterm').
+:- include('unicode_prop_list/unicode_variation_selector').
+:- include('unicode_prop_list/unicode_pattern_white_space').
+:- include('unicode_prop_list/unicode_pattern_syntax').
 
 % EOF
